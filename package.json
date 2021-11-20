@@ -1,0 +1,44 @@
+{
+  "name": "generalsever",
+  "version": "1.0.0",
+  "description": "Multple purpose sever",
+  "main": "gserver.js",
+  "scripts": {
+    "start": "NODE_ENV=production node gserver",
+    "dev": "nodemon gserver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francisChigozie/generalsever.git"
+  },
+  "author": "Chigozie Francis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francisChigozie/generalsever/issues"
+  },
+  "homepage": "https://github.com/francisChigozie/generalsever#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^6.0.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.5.1",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "node-geocoder": "^3.27.0",
+    "nodemailer": "^6.7.1",
+    "slugify": "^1.6.2",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
