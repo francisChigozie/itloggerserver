@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
         await mongoose.connect(process.env.DATABASE_URL)
         console.log(`DB gserver connected!`.cyan.underline.bold)
     } catch (err) {
-        error.message(err);
+        console.error(err.message);
     }
 }
 

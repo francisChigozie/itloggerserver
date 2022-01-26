@@ -1,7 +1,8 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const exphb = require('express-handlebars')
-const connectToDatabase = require('./models/index');
+//const connectToDatabase = require('./models/index');
+const connectDB = require('./config/db')
 const error = require('./middleware/error')
 const path = require('path')
 const colors = require('colors')
@@ -10,12 +11,14 @@ const morgan = require('morgan')
 
 // Route Files
 const frankfurtcontact = require('./routes/frankfurtcontact')
+const logsystem = require('./routes/logsystem')
+const technician = require('./routes/technician')
 const auth = require('./routes/auth');
 
 const errorHadler = require('./middleware/error');
 
 // Load env vars
-dotenv.config({path:'./config/config.env'})
+//dotenv.config({path:'./config/config.env'})
 
 const app = express()
 
@@ -28,20 +31,32 @@ if(process.env.NODE_ENV === 'development'){
 
 //Set CORS
 app.use(cors({
-    origin: "https://frankfurtfintek.netlify.app"}))
+    origin: "https://frankfurtfintek.netlify.app",
+    origin: ""
+}))
 
 //Set Static folder
 app.use(express.static(path.join(__dirname, `public`)))
 
 //Mount Routers
 app.use('/api/v1/frankfurtcontact', frankfurtcontact)
+app.use('/api/v1/logsystem', logsystem)
+app.use('/api/v1/technician', technician)
 app.use('/api/v1/auth', auth)
 //app.use('/api/v1/users', users)
 app.use(errorHadler)
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 4000
 
-//CONNECTINT TO DATA BASE
+// Connect to Data Base
+connectDB();
+
+app.listen(PORT, () => {
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold)
+});
+
+/**
+ * //CONNECTINT TO DATA BASE
  connectToDatabase( {
              useNewUrlParser: true, useUnifiedTopoology: true 
         })
@@ -55,3 +70,4 @@ const PORT = process.env.PORT || 5000
 });
 
 });
+ */

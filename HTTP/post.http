@@ -1,8 +1,9 @@
-POST http://localhost:5000/api/v1/frankfurtcontact
+POST http://localhost:4000/api/v1/logsystem
 Content-Type: application/json
 
 {
-    "name": "franky",
-    "email": "franky@gmail.com",
-    "phone": "+564567898"
+    "message": "Changed route on stattion 009",
+    "attention": true,
+    "tech": "John Doe",
+    "date": "26.01.2022"
 }
