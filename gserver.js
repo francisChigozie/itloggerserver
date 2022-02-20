@@ -33,6 +33,9 @@ if(process.env.NODE_ENV === 'development'){
 app.use(cors({
    origin: "http://localhost:3001"
 }))
+app.use(cors({
+    origin:'https://digitalexhibition.herokuapp.com/frankfurtcontact'
+}))
 
 //Set Static folder
 app.use(express.static(path.join(__dirname, `public`)))
