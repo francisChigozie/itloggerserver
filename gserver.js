@@ -41,7 +41,7 @@ app.use(cors({
 app.use(express.static(path.join(__dirname, `public`)))
 
 //Mount Routers
-app.use('/api/v1/frankfurtcontact', frankfurtcontact)
+app.use('/frankfurtcontact', frankfurtcontact)
 app.use('/api/v1/logs', logs)
 app.use('/api/v1/techs', techs)
 app.use('/api/v1/auth', auth)
