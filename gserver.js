@@ -31,8 +31,7 @@ if(process.env.NODE_ENV === 'development'){
 
 //Set CORS
 app.use(cors({
-   origin: "http://localhost:3001",
-   origin: "https://frankfurtfintek.netlify.app"
+   origin: "http://localhost:3001"
 }))
 
 //Set Static folder
