@@ -34,7 +34,7 @@ app.use(cors({
    origin: "http://localhost:3001"
 }))
 app.use(cors({
-    origin:'https://digitalexhibition.herokuapp.com/frankfurt#contact'
+    origin:''
 }))
 
 //Set Static folder
