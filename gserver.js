@@ -31,7 +31,8 @@ if(process.env.NODE_ENV === 'development'){
 
 //Set CORS
 app.use(cors({
-   origin: "http://localhost:3000"
+   origin: "http://localhost:3000",
+   origin: "https://frankfurtfintek.netlify.app"
 }))
 
 //Set Static folder
@@ -55,7 +56,7 @@ app.listen(PORT, () => {
 });
 
 /**
- *  origin: "https://frankfurtfintek.netlify.app",
+ *  ,
  * //CONNECTINT TO DATA BASE
  connectToDatabase( {
              useNewUrlParser: true, useUnifiedTopoology: true 
