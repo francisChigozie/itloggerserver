@@ -11,8 +11,8 @@ const morgan = require('morgan')
 
 // Route Files
 const frankfurtcontact = require('./routes/frankfurtcontact')
-const logsystem = require('./routes/logsystem')
-const technician = require('./routes/technician')
+const logs = require('./routes/logsystem')
+const techs = require('./routes/technician')
 const auth = require('./routes/auth');
 
 const errorHadler = require('./middleware/error');
@@ -31,8 +31,7 @@ if(process.env.NODE_ENV === 'development'){
 
 //Set CORS
 app.use(cors({
-    origin: "https://frankfurtfintek.netlify.app",
-    origin: ""
+   origin: "http://localhost:3000"
 }))
 
 //Set Static folder
@@ -40,8 +39,8 @@ app.use(express.static(path.join(__dirname, `public`)))
 
 //Mount Routers
 app.use('/api/v1/frankfurtcontact', frankfurtcontact)
-app.use('/api/v1/logsystem', logsystem)
-app.use('/api/v1/technician', technician)
+app.use('/api/v1/logs', logs)
+app.use('/api/v1/techs', techs)
 app.use('/api/v1/auth', auth)
 //app.use('/api/v1/users', users)
 app.use(errorHadler)
@@ -56,6 +55,7 @@ app.listen(PORT, () => {
 });
 
 /**
+ *  origin: "https://frankfurtfintek.netlify.app",
  * //CONNECTINT TO DATA BASE
  connectToDatabase( {
              useNewUrlParser: true, useUnifiedTopoology: true 

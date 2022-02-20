@@ -16,11 +16,11 @@ exports.getTechs = asyncHandler(async (req, res, next) => {
 //@access  Private/admin
 
 exports.createTechs = asyncHandler(async (req, res, next) => {
-    const techs = await Technicians.create(req.body)
+    const tech = await Technicians.create(req.body)
 
     res.status(201).json({
         success: true,
-        data: techs
+        data: tech
     })
 });
 

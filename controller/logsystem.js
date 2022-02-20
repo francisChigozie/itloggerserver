@@ -16,11 +16,11 @@ exports.getLogs = asyncHandler(async (req, res, next) => {
 //@access  Private/admin
 
 exports.getLog = asyncHandler(async (req, res, next) => {
-    const log = await Logsystem.findById(req.params.id)
+    const logs = await Logsystem.findById(req.params.id)
 
     res.status(200).json({
         success: true,
-        data: log
+        data: logs
     })
 })
 
