@@ -14,7 +14,7 @@ import { GET_LOGS,
 export const getLogs = () => async dispatch =>{
     try {
         setLoading();
-        const res = await fetch('https://generalserviceserver.herokuapp.com/api/v1/logs', {
+        const res = await fetch('https://itloggerserver.herokuapp.com/api/v1/logs', {
             method: 'GET',
             mode: 'no-cors'
         }) ;
@@ -38,7 +38,7 @@ export const addLogs = (log) => async dispatch =>{
     try {
         setLoading();
 
-        const res = await fetch('https://generalserviceserver.herokuapp.com/api/v1/logs', {
+        const res = await fetch('https://itloggerserver.herokuapp.com/api/v1/logs', {
             method: 'POST',
             body: JSON.stringify(log),
             headers: {
@@ -64,7 +64,7 @@ export const deleteLog = (id) => async dispatch =>{
     try {
         setLoading();
 
-        await fetch(`https://generalserviceserver.herokuapp.com/api/v1/logs/${id}`, {
+        await fetch(`https://itloggerserver.herokuapp.com/api/v1/logs/${id}`, {
             method: 'DELETE'
         });
 
@@ -86,7 +86,7 @@ export const updateLog = log => async dispatch =>{
         setLoading();
 
         
-       const res = await fetch(`https://generalserviceserver.herokuapp.com/api/v1/logs/${log.id}`, {
+       const res = await fetch(`https://itloggerserver.herokuapp.com/api/v1/logs/${log.id}`, {
             method: 'PUT',
             body: JSON.stringify(log),
             headers: {
@@ -112,7 +112,7 @@ export const searchLogs = (text) => async dispatch =>{
     try {
         setLoading();
 
-        const res = await fetch(`https://generalserviceserver.herokuapp.com/api/v1/logs?q=${text}`);
+        const res = await fetch(`https://itloggerserver.herokuapp.com/api/v1/logs?q=${text}`);
         const data = await res.json();
 
         dispatch({

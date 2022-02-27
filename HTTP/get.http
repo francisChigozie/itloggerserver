@@ -1,1 +1,1 @@
-GET  http://localhost:4000/api/v1/techs
+GET  http://localhost:4000/api/v1/logs
