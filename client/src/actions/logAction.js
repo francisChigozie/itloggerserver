@@ -14,10 +14,7 @@ import { GET_LOGS,
 export const getLogs = () => async dispatch =>{
     try {
         setLoading();
-        const res = await fetch('https://itloggerserver.herokuapp.com/api/v1/logs', {
-            method: 'GET',
-            mode: 'no-cors'
-        }) ;
+        const res = axios.get('https://itloggerserver.herokuapp.com/api/v1/logs') ;
         
        const data = await res.json();
 

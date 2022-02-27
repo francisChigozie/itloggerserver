@@ -34,7 +34,7 @@ if(process.env.NODE_ENV === 'production'){
 
 //Set CORS
 app.use(cors({
-    origin:''
+    origin:'https://itloggerserver.herokuapp.com'
 }))
 
 //Set Static folder

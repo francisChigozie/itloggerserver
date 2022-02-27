@@ -13,7 +13,7 @@ export const getTechs = () => async dispatch =>{
         setLoading();
 
         const res = await fetch('https://itloggerserver.herokuapp.com/api/v1/techs', {
-            mode: 'no cors'
+            method: 'GET'
         });
         const data = await res.json();
 
