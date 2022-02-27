@@ -12,7 +12,7 @@ export const getTechs = () => async dispatch =>{
     try {
         setLoading();
 
-        const res = await fetch('https://itloggerserver.herokuapp.com/api/v1/techs', {
+        const res = await fetch('https://generalserviceserver.herokuapp.com/api/v1/techs', {
             mode: 'no cors'
         });
         const data = await res.json();
@@ -34,7 +34,7 @@ export const addTechs = (techs) => async dispatch =>{
     try {
         setLoading();
 
-        const res = await fetch('https://itloggerserver.herokuapp.com/api/v1/techs', {
+        const res = await fetch('https://generalserviceserver.herokuapp.com/api/v1/techs', {
             method: 'POST',
             body: JSON.stringify(techs),
             headers: {
@@ -60,7 +60,7 @@ export const deleteTechs = (id) => async dispatch =>{
     try {
         setLoading();
        
-        await fetch(`https://itloggerserver.herokuapp.com/api/v1/techs/${id}`, {
+        await fetch(`https://generalserviceserver.herokuapp.com/api/v1/techs/${id}`, {
             method: 'DELETE'
         });
 
