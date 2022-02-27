@@ -18,7 +18,7 @@ const auth = require('./routes/auth');
 const errorHadler = require('./middleware/error');
 
 // Load env vars
-//dotenv.config({path:'./config/config.env'})
+dotenv.config({path:'./production.json'})
 
 const app = express()
 

@@ -1,9 +1,8 @@
-POST http://localhost:4000/api/v1/logsystem
+POST http://localhost:4000/api/v1/logs
 Content-Type: application/json
 
 {
-    "message": "Changed route on stattion 009",
+    "message": "New installations on the new site",
     "attention": true,
-    "tech": "John Doe",
-    "date": "26.01.2022"
+    "tech": "Christian kings"
 }
