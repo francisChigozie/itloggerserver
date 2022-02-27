@@ -25,14 +25,14 @@ const app = express()
 app.use(express.json())
 
 //Dev logging middleware
-if(process.env.NODE_ENV === 'development'){
-     app.use(morgan('dev'));
+if(process.env.NODE_ENV === 'production'){
+    // Set static folder
+     app.use(express.static('client/build'));
+
+     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 }
 
 //Set CORS
-app.use(cors({
-   origin: "http://localhost:3001"
-}))
 app.use(cors({
     origin:''
 }))
@@ -41,7 +41,7 @@ app.use(cors({
 app.use(express.static(path.join(__dirname, `public`)))
 
 //Mount Routers
-app.use('/frankfurtcontact', frankfurtcontact)
+app.use('/api/v1/frankfurtcontact', frankfurtcontact)
 app.use('/api/v1/logs', logs)
 app.use('/api/v1/techs', techs)
 app.use('/api/v1/auth', auth)

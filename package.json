@@ -4,19 +4,23 @@
   "description": "Multple purpose sever",
   "main": "gserver.js",
   "scripts": {
-    "start": "NODE_ENV=production node gserver",
-    "dev": "nodemon gserver"
+    "start": "node gserver.js",
+    "server": "nodemon gserver.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run gserver\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/francisChigozie/generalsever.git"
+    "url": "git+https://github.com/francisChigozie/itloggerserver.git"
   },
   "author": "Chigozie Francis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/francisChigozie/generalsever/issues"
+    "url": "https://github.com/francisChigozie/itloggerserver/issues"
   },
-  "homepage": "https://github.com/francisChigozie/generalsever#readme",
+  "homepage": "https://github.com/francisChigozie/itloggerserver#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "colors": "^1.4.0",
@@ -40,6 +44,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   }
 }
